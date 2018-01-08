@@ -17,9 +17,21 @@ var counter = {
 
 function countLetters(counter, sample_text){
   // FIX ME
+
+  let text = sample_text.toLowerCase();
+  if(sample_text.length === 0){
+    return counter;
+
+  }if([text.slice(0,1)] ){
+    counter[text.slice(0,1)]++
+  }
+
+  console.log(text.slice(1));
+  return countLetters(counter, text.slice(1));
 }
 
 $(document).ready(function(){
   countLetters(counter, sample_text);
   $("#result").html(JSON.stringify(counter));
 });
+
