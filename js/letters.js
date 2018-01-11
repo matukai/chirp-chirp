@@ -21,8 +21,9 @@ function countLetters(counter, sample_text){
   let text = sample_text.toLowerCase();
   if(sample_text.length === 0){
     return counter;
-
-  }if([text.slice(0,1)] ){
+    //if ( this is a key )
+  }if(counter.hasOwnProperty(text.slice(0,1))){
+    //counter add one
     counter[text.slice(0,1)]++
   }
 
